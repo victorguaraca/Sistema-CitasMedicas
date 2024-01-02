@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[multiple],
+textarea,
+select {
+    width: 100%;
+    border-radius: 0.375rem; /* Equivalent to rounded-md in Tailwind */
+    border: 1px solid #ccc; /* Equivalent to border-gray-300 in Tailwind */
+    padding: 0.75rem; /* Equivalent to px-3 and py-3 in Tailwind */
+    font-size: 0.875rem; /* Equivalent to text-xs in Tailwind */
+    color: #333; /* Equivalent to text-gray-400 in Tailwind */
+    placeholder: #ccc; /* Equivalent to placeholder-gray-400 in Tailwind */
+    outline: none; /* Equivalent to focus:outline-none in Tailwind */
+    transition: border-color 0.2s ease-in-out; /* Equivalent to focus:ring in Tailwind */
+
+    /* Focus styles */
+    &:focus {
+        z-index: 10; /* Equivalent to focus:z-10 in Tailwind */
+        border-color: #3182ce; /* Equivalent to focus:border-primary-500 in Tailwind */
+        outline: none; /* Remove default focus outline */
+        ring: 2px solid #3182ce; /* Equivalent to focus:ring-primary-500 in Tailwind */
+    }
+
+    /* Dark mode styles */
+    dark-mode {
+        border-color: #2c3e50; /* Equivalent to dark:border-night-500 in Tailwind */
+        background-color: #2c3e50; /* Equivalent to dark:bg-night-700 in Tailwind */
+        color: #bdc3c7; /* Equivalent to dark:text-night-400 in Tailwind */
+        placeholder: #34495e; /* Equivalent to dark:placeholder-night-200 in Tailwind */
+    }
+}
+
+/* Base styles for checkbox and radio input elements */
+[type='checkbox'],
+[type='radio'] {
+    height: 1rem; /* Equivalent to h-4 in Tailwind */
+    width: 1rem; /* Equivalent to w-4 in Tailwind */
+    border-radius: 0.25rem; /* Equivalent to rounded in Tailwind */
+    border: 1px solid #ccc; /* Equivalent to border-gray-300 in Tailwind */
+    background-color: #f8f9fa; /* Equivalent to bg-gray-100 in Tailwind */
+    color: #28a745; /* Equivalent to text-green-600 in Tailwind */
+    focus: {
+        ring: 2px solid #28a745; /* Equivalent to focus:ring-green-500 in Tailwind */
+    }
+
+    /* Dark mode styles */
+    dark-mode {
+        border-color: #2c3e50; /* Equivalent to dark:border-night-600 in Tailwind */
+        background-color: #2c3e50; /* Equivalent to dark:bg-night-700 in Tailwind */
+        ring-offset: #2c3e50; /* Equivalent to dark:ring-offset-night-800 in Tailwind */
+        focus: {
+            ring: 2px solid #28a745; /* Equivalent to dark:focus:ring-green-600 in Tailwind */
+        }
+    }
+}
+
+/* Component styles */
+.dropdown-content {
+  pointer-events: none;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.1s ease-in, opacity 0.1s ease-in;
+}
+
+.dropdown:hover > .dropdown-content {
+  pointer-events: auto;
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+  animation: fade-in-up 0.2s ease-in;
+}
+
+@keyframes fade-in-up {
+  from {
+      transform: translateY(0.5rem);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Scroll bar styles */
+@supports selector(::-webkit-scrollbar) {
+  .supports-scrollbars\:pr-2 {
+      padding-right: 0.5rem;
+  }
+}
+@import './assets/styles/apexchart.css';
